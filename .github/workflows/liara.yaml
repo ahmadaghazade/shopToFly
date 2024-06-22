@@ -14,7 +14,7 @@ jobs:
                   node-version: "18"
             - name: update-liara
               env:
-                  LIARA_TOKEN: ${{ secrets.SHOPTOFLY }}
+                  LIARA_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
               run: |
                   npm i -g @liara/cli@6
-                  liara deploy --app="shoptofly" --api-token="$SHOPTOFLY" --no-app-logs
+                  liara deploy --app="shoptofly" --api-token="$LIARA_TOKEN" --no-app-logs
