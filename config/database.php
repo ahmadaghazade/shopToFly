@@ -123,7 +123,7 @@ return [
     */
 
     'migrations' => [
-        'table' => 'migrations',
+        'table' => env('MIGRATIONS_TABLE_NAME', 'migrations'),
         'update_date_on_publish' => true,
     ],
 

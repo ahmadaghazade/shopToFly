@@ -69,6 +69,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Direction
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the default direction for your application, which
+    | will be used to locate the app direction in the front end. The direction
+    | is set to "ltr" by default as it is suitable for most use cases.
+    |
+    */
+    'dir' => env('APP_DIR', 'rtl'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Locale Configuration
     |--------------------------------------------------------------------------
     |
