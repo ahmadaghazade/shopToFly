@@ -6,9 +6,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
+//    private mixed $email;
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        $allowed_email = config('framework.allowed_email');
+        return $this->email === $allowed_email && $this->hasVerifiedEmail();
+
+    }
     use HasFactory, Notifiable;
 
     /**
