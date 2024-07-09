@@ -20,6 +20,9 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class AdminPanelProvider extends PanelProvider
 {
+    /**
+     * @throws \Exception
+     */
     public function panel(Panel $panel): Panel
     {
         return $panel
@@ -27,6 +30,10 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->font(
+                family: 'Yekan Bakh FaNum',
+                url: '/fonts/yekanbakh/loader.css'
+            )
             ->colors([
                 'primary' => Color::Amber,
             ])
